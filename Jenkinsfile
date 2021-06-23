@@ -2,6 +2,9 @@ pipeline {
     agent {
         label 'ubuntu'
     }
+    parameters {
+        string name: 'AWS_PROFILE', trim: true
+    }
     stages {
         stage('Init') {
             agent {
@@ -11,8 +14,7 @@ pipeline {
                 }
             }
             steps {
-                echo "$WORKSPACE"
-                sh 'pwd'
+                sh "sed -i 's/AWS_PROFILE/${params.AWS_PROFILE}/g' main.tf"
                 sh 'terraform init'
             }
         }

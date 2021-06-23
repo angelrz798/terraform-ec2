@@ -10,7 +10,7 @@ terraform {
 }
 
 provider "aws" {
-  profile = "angel.ruiz"
+  profile = "AWS_PROFILE"
   region  = "us-east-1"
 }
 
