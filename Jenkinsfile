@@ -26,7 +26,7 @@ pipeline {
                 }
             }
             steps {
-                // sh "sed -i 's/AWS_PROFILE/${params.AWS_PROFILE}/g' main.tf"
+                sh "sed -i 's/AWS_PROFILE/${params.AWS_PROFILE}/g' main.tf"
                 sh 'terraform fmt'
             }
         }
@@ -38,7 +38,7 @@ pipeline {
                 }
             }
             steps {
-                // sh "sed -i 's/AWS_PROFILE/${params.AWS_PROFILE}/g' main.tf"
+                sh "sed -i 's/AWS_PROFILE/${params.AWS_PROFILE}/g' main.tf"
                 sh 'terraform validate'
             }
         }
@@ -50,7 +50,7 @@ pipeline {
                 }
             }
             steps {
-                // sh "sed -i 's/AWS_PROFILE/${params.AWS_PROFILE}/g' main.tf"
+                sh "sed -i 's/AWS_PROFILE/${params.AWS_PROFILE}/g' main.tf"
                 sh 'terraform apply -auto-approve'
             }
         }
