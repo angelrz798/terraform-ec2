@@ -15,7 +15,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "jenkins_ssh_agent" {
-  ami           = "ami-830c94e3"
+  ami           = "ami-0747bdcabd34c712a"
   instance_type = "t3a.medium"
 
   tags = {
